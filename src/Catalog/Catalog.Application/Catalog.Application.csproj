@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="UseCases\CatalogCases\Handlers\QueryHandlers\" />
-    <Folder Include="UseCases\CatalogCases\Queries\" />
   </ItemGroup>
 
 </Project>

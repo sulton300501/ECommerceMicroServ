@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.Application.UseCases.CatalogCases.Handlers.CommandHandlers
 {
-    public class GetAllCatalogCommandHandler : IRequestHandler<GetAllCatalogCommands, ProductCatalog>
+    public class GetAllCatalogCommandHandler : IRequestHandler<GetAllCatalogCommands, List<ProductCatalog>>
     {
         private readonly ICatalogDbContext _catalogDbContext;
 
@@ -20,9 +20,10 @@ namespace Catalog.Application.UseCases.CatalogCases.Handlers.CommandHandlers
             _catalogDbContext = catalogDbContext;
         }
 
-        public Task<List<ProductCatalog>> Handle(GetAllCatalogCommands request, CancellationToken cancellationToken)
+        public async Task<List<ProductCatalog>> Handle(GetAllCatalogCommands request, CancellationToken cancellationToken)
         {
-            var result = _catalogDbContext.Catalogs.ToListAsync();
+            var result = await _catalogDbContext.Catalogs.ToListAsync();
+
             return result;
         }
     }

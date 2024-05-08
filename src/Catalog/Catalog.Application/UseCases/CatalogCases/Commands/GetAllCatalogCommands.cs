@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Catalog.Application.UseCases.CatalogCases.Commands
 {
-    public class GetAllCatalogCommands:IRequest<ProductCatalog>
+    public class GetAllCatalogCommands:IRequest<List<ProductCatalog>>
     {
-        public List<ProductCatalog> Catalog { get; set; }
+       
 
     }
 }
